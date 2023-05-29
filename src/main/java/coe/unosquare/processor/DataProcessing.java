@@ -3,8 +3,9 @@ package coe.unosquare.processor;
 import coe.unosquare.user.User;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class DataProcessing {
+public final class DataProcessing {
     private final DataList dataList;
     private List<User> userList;
 
@@ -18,18 +19,14 @@ public class DataProcessing {
         dataList.getGeneratedInfo().forEach(userInfo->{
             String[] userStringInfo = userInfo.split(",");
             userList.add(new User(
-                    Integer.parseInt(userStringInfo[0]),
+                    userStringInfo[0],
                     userStringInfo[1],
                     userStringInfo[2],
-                    Double.parseDouble(userStringInfo[3])));
+                    Optional.of(userStringInfo[3])));
         });
     }
 
     public List<User> getUserList(){
         return userList;
-    }
-
-    public void insertUser(User user){
-        userList.add(user);
     }
 }

@@ -1,48 +1,37 @@
 package coe.unosquare.user;
 
+import java.util.Optional;
+
 public class User {
-    private Integer id;
+    private String id;
     private String firstName;
     private String lastName;
-    private Double savings;
+    private Optional<String> savings;
 
-    public User(Integer id, String lastName, String firstName, Double savings) {
+    public User(String id, String lastName, String firstName, Optional<String> savings) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.savings = savings;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
-    public Double getSavings() {
+    public Optional<String> getSavings() {
         return savings;
-    }
-
-    public void setSavings(Double savings) {
-        this.savings = savings;
     }
 
     @Override
@@ -51,7 +40,7 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", savings=" + savings +
+                ", savings=" + savings.get() +
                 '}';
     }
 }

@@ -3,7 +3,7 @@ package coe.unosquare.processor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataList {
+public final class DataList {
     private static DataList dataList;
     private List<String> userData;
     private DataList(){
@@ -11,14 +11,15 @@ public class DataList {
         generate();
     }
     private void generate(){
-        userData.add("1,Potter,Harry,1894726.89");
-        userData.add("2,Weasly,Ron,456663.23");
-        userData.add("3,Granger,Hermione,9420662.72");
-        userData.add("4,Lovegood,Luna,6220490.68");
-        userData.add("5,Lupin,Remus,7468686.62");
-        userData.add("6,McGonagall,Minerva,8262995.47");
-        userData.add("7,Black,Sirius,6974355.68");
-        userData.add("8,Hagrid,Rubeus,2789638.96");
+        userData.add("1,Potter,Harry,94726.89");
+        userData.add("2,Weasly,Ron,6663.23");
+        userData.add("3,Granger,Hermione,20662.72");
+        userData.add("4,Potter,Harry,20490.68");
+        userData.add("5,Granger,Hermione,68686.62");
+        userData.add("6,Potter,Harry,62995.47");
+        userData.add("7,Granger,Hermione,74355.68");
+        userData.add("8,Weasly,Ron,89638.96");
+        userData.add("9,Weasly,Fred,100000.00");
     }
 
     public void print(){
